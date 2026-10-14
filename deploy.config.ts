@@ -24,9 +24,15 @@ export interface SeaportConfig {
 }
 
 export interface DeployConfig {
+  chainId?: number;
+  isTest?: boolean;
+  deploySeaport?: boolean;
+  forceDeploySeaport?: boolean;
   contracts: {
     TestMintNFT?: ContractDeploymentConfig<[name: string, symbol: string, defaultURI: string]>;
+    MoriusaTestNFT?: ContractDeploymentConfig<[name: string, symbol: string, defaultURI: string]>;
     TestMintToken?: ContractDeploymentConfig<[]>;
+    TestUSDC?: ContractDeploymentConfig<[]>;
     NFTMintportERC721?: ContractDeploymentConfig<[name: string, symbol: string, initialOwner?: Address]>;
     NFTMintportERC1155?: ContractDeploymentConfig<[uri: string, initialOwner?: Address]>;
     [contractName: string]: ContractDeploymentConfig<any> | undefined;

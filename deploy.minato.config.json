@@ -1,0 +1,26 @@
+{
+  "chainId": 1946,
+  "isTest": true,
+  "deploySeaport": true,
+  "forceDeploySeaport": true,
+  "contracts": {
+    "MoriusaTestNFT": {
+      "enabled": true,
+      "args": [
+        "Moriusa Main NFT Collection",
+        "MORIUSA_NFT",
+        "ipfs://bafybeic7vcmk2xxdv234bylg2n2q6o52kgh6tqu5i4w2p3yfxq6a2m4k6e/moriusa.json"
+      ],
+      "testOnly": true
+    },
+    "TestUSDC": {
+      "enabled": true,
+      "args": [],
+      "testOnly": true
+    }
+  },
+  "seaport": {
+    "mode": "deployed",
+    "version": "1.6"
+  }
+}

@@ -11,6 +11,13 @@
     "isTestnet": true,
     "currency": "ETH"
   },
+  "1946": {
+    "name": "Soneium Minato",
+    "rpcUrl": "https://rpc.minato.soneium.org",
+    "isTestnet": true,
+    "currency": "ETH",
+    "explorerUrl": "https://explorer-testnet.soneium.org"
+  },
   "11155111": {
     "name": "Ethereum Sepolia",
     "rpcUrl": "https://rpc.sepolia.org",

@@ -40,8 +40,11 @@ export async function deploySeaportStandalone(configPath?: string | null): Promi
 
   const bytecode = await publicClient.getBytecode({ address: canonicalAddress });
   let seaportRecord: SeaportRecord;
+  const shouldForce = Boolean(
+    loadedConfig.forceDeploySeaport || (loadedConfig.seaport as any)?.mode === "deployed"
+  );
 
-  if (bytecode && bytecode !== "0x") {
+  if (!shouldForce && bytecode && bytecode !== "0x") {
     console.log(`✅ Canonical Seaport v1.6 is ALREADY deployed at: ${canonicalAddress}`);
     seaportRecord = {
       mode: "existing",
@@ -50,7 +53,6 @@ export async function deploySeaportStandalone(configPath?: string | null): Promi
       conduitController,
     };
   } else {
-    console.log(`⚠️  Canonical Seaport v1.6 is NOT deployed on this chain.`);
     console.log(`🚀 Deploying MockSeaportV16...`);
     const seaport = await hre.viem.deployContract("MockSeaportV16", []);
     console.log(`🎉 MockSeaportV16 successfully deployed to: ${seaport.address}`);

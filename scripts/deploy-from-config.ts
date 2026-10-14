@@ -27,6 +27,7 @@ export interface UniversalDeployConfig {
   chainId?: number;
   isTest?: boolean;
   deploySeaport?: boolean;
+  forceDeploySeaport?: boolean;
   contracts: {
     [contractName: string]: {
       enabled: boolean;
@@ -127,7 +128,19 @@ export function resolveContractArgs(
       }
       break;
     }
-    case "TestMintToken": {
+    case "MoriusaTestNFT": {
+      // Expected args: [name, symbol, defaultURI]
+      if (args.length === 0) {
+        args.push(
+          "Moriusa Main NFT Collection",
+          "MORIUSA_NFT",
+          "ipfs://bafybeic7vcmk2xxdv234bylg2n2q6o52kgh6tqu5i4w2p3yfxq6a2m4k6e/moriusa.json"
+        );
+      }
+      break;
+    }
+    case "TestMintToken":
+    case "TestUSDC": {
       // Expected args: []
       break;
     }
@@ -173,6 +186,9 @@ export function resolveConfigForNetwork(
     }
     if (overrides.deploySeaport !== undefined) {
       resolved.deploySeaport = overrides.deploySeaport;
+    }
+    if (overrides.forceDeploySeaport !== undefined) {
+      resolved.forceDeploySeaport = overrides.forceDeploySeaport;
     }
   }
 
@@ -262,11 +278,15 @@ export async function deployFromConfig(
   const canonicalSeaportAddress: `0x${string}` = "0x0000000000000068F116a894984e2DB1123eB395";
   const canonicalConduitController: `0x${string}` = "0x00000000F9490004C103FB2A09CE222342427011";
 
+  const shouldForceDeploy = Boolean(
+    activeConfig.forceDeploySeaport || activeConfig.seaport?.mode === "deployed"
+  );
+
   const existingSeaportCode = await publicClient.getBytecode({
     address: canonicalSeaportAddress,
   });
 
-  if (existingSeaportCode && existingSeaportCode !== "0x") {
+  if (!shouldForceDeploy && existingSeaportCode && existingSeaportCode !== "0x") {
     console.log(`ℹ️ Canonical Seaport v1.6 detected on-chain at: ${canonicalSeaportAddress}`);
     seaportRecord = {
       mode: "existing",
@@ -274,8 +294,8 @@ export async function deployFromConfig(
       address: canonicalSeaportAddress,
       conduitController: canonicalConduitController,
     };
-  } else if (activeConfig.deploySeaport || isTest) {
-    console.log(`🚢 Canonical Seaport v1.6 not detected on this chain.`);
+  } else if (activeConfig.deploySeaport || isTest || shouldForceDeploy) {
+    console.log(`🚢 ${shouldForceDeploy ? "Dedicated MockSeaportV16 requested via config" : "Canonical Seaport v1.6 not detected on this chain"}.`);
     console.log(`🚀 Deploying MockSeaportV16 for this network...`);
     const seaportDeployed = await hre.viem.deployContract("MockSeaportV16", []);
     console.log(`✅ MockSeaportV16 deployed to: ${seaportDeployed.address}`);

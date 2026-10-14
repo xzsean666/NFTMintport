@@ -11,6 +11,7 @@
     "test:e2e": "hardhat test test/e2e/*.test.ts",
     "deploy": "ts-node scripts/deploy-from-config.ts",
     "deploy:local": "hardhat run scripts/deploy-all.ts",
+    "deploy:minato": "DEPLOY_CONFIG=deploy.minato.config.json hardhat run scripts/deploy-from-config.ts --network soneium-minato",
     "deploy:config": "ts-node scripts/deploy-from-config.ts",
     "deploy:seaport": "ts-node scripts/deploy-seaport.ts",
     "inspect:deployments": "ts-node scripts/inspect-deployments.ts",

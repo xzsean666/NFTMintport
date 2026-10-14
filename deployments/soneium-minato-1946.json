@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "1.0.0",
+  "project": "NFTMintport",
+  "environment": "testnet",
+  "chainId": 1946,
+  "networkName": "soneium-minato",
+  "deployedAt": "2026-10-14T10:30:45.858Z",
+  "deployer": "0x55193778a808426eb4024fadad1ac3c0968e8af2",
+  "isTest": true,
+  "contracts": {
+    "MoriusaTestNFT": {
+      "address": "0xc252a473DC466de3799149A2616ccc625832F40C",
+      "testOnly": true,
+      "args": [
+        "Moriusa Main NFT Collection",
+        "MORIUSA_NFT",
+        "ipfs://bafybeic7vcmk2xxdv234bylg2n2q6o52kgh6tqu5i4w2p3yfxq6a2m4k6e/moriusa.json"
+      ]
+    },
+    "TestUSDC": {
+      "address": "0x2C2e569e3Df89c55Ba46Ce52248Ae180379d0B31",
+      "testOnly": true
+    },
+    "Seaport": {
+      "mode": "deployed",
+      "version": "1.6",
+      "address": "0xbae7B318A137b68eB78c1f22e5B59FcDf4d50E19",
+      "conduitController": "0x00000000F9490004C103FB2A09CE222342427011"
+    }
+  }
+}
