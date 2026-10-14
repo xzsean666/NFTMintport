@@ -1,0 +1,77 @@
+{
+  "31337": {
+    "name": "Hardhat Local",
+    "rpcUrl": "http://127.0.0.1:8545",
+    "isTestnet": true,
+    "currency": "ETH"
+  },
+  "1337": {
+    "name": "Localhost",
+    "rpcUrl": "http://127.0.0.1:8545",
+    "isTestnet": true,
+    "currency": "ETH"
+  },
+  "11155111": {
+    "name": "Ethereum Sepolia",
+    "rpcUrl": "https://rpc.sepolia.org",
+    "isTestnet": true,
+    "currency": "ETH",
+    "explorerUrl": "https://sepolia.etherscan.io"
+  },
+  "84532": {
+    "name": "Base Sepolia",
+    "rpcUrl": "https://sepolia.base.org",
+    "isTestnet": true,
+    "currency": "ETH",
+    "explorerUrl": "https://sepolia.basescan.org"
+  },
+  "421614": {
+    "name": "Arbitrum Sepolia",
+    "rpcUrl": "https://sepolia-rollup.arbitrum.io/rpc",
+    "isTestnet": true,
+    "currency": "ETH",
+    "explorerUrl": "https://sepolia.arbiscan.io"
+  },
+  "80002": {
+    "name": "Polygon Amoy",
+    "rpcUrl": "https://rpc-amoy.polygon.technology",
+    "isTestnet": true,
+    "currency": "MATIC",
+    "explorerUrl": "https://amoy.polygonscan.com"
+  },
+  "1": {
+    "name": "Ethereum Mainnet",
+    "rpcUrl": "https://eth.llamarpc.com",
+    "isTestnet": false,
+    "currency": "ETH",
+    "explorerUrl": "https://etherscan.io"
+  },
+  "8453": {
+    "name": "Base Mainnet",
+    "rpcUrl": "https://mainnet.base.org",
+    "isTestnet": false,
+    "currency": "ETH",
+    "explorerUrl": "https://basescan.org"
+  },
+  "42161": {
+    "name": "Arbitrum One",
+    "rpcUrl": "https://arb1.arbitrum.io/rpc",
+    "isTestnet": false,
+    "currency": "ETH",
+    "explorerUrl": "https://arbiscan.io"
+  },
+  "137": {
+    "name": "Polygon Mainnet",
+    "rpcUrl": "https://polygon-rpc.com",
+    "isTestnet": false,
+    "currency": "POL",
+    "explorerUrl": "https://polygonscan.com"
+  },
+  "10": {
+    "name": "Optimism Mainnet",
+    "rpcUrl": "https://mainnet.optimism.io",
+    "isTestnet": false,
+    "currency": "ETH",
+    "explorerUrl": "https://optimistic.etherscan.io"
+  }
+}

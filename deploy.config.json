@@ -1,0 +1,31 @@
+{
+  "chainId": 31337,
+  "isTest": true,
+  "deploySeaport": true,
+  "contracts": {
+    "TestMintNFT": {
+      "enabled": true,
+      "args": [
+        "NFTMintport Test NFT",
+        "NMTNFT",
+        "ipfs://bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi/default.json"
+      ]
+    },
+    "TestMintToken": {
+      "enabled": true
+    },
+    "NFTMintportERC721": {
+      "enabled": true,
+      "args": [
+        "NFTMintport Collection",
+        "NMP"
+      ]
+    },
+    "NFTMintportERC1155": {
+      "enabled": true,
+      "args": [
+        "https://api.nftmintport.io/metadata/{id}.json"
+      ]
+    }
+  }
+}

@@ -1,0 +1,11 @@
+node_modules
+artifacts
+cache
+dist
+.env
+
+# Ephemeral local test deployments
+deployments/*-31337.json
+deployments/history/deployment-31337-*
+!deployments/.gitkeep
+!deployments/history/.gitkeep

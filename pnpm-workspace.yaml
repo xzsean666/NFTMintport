@@ -1,0 +1,10 @@
+packages:
+  - "sdk"
+
+allowBuilds:
+  keccak: true
+  secp256k1: true
+
+onlyBuiltDependencies:
+  - keccak
+  - secp256k1

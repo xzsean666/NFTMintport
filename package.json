@@ -1,0 +1,34 @@
+{
+  "name": "nftmintport",
+  "version": "0.1.0",
+  "private": true,
+  "description": "EVM toolkit for launching NFT collections and enabling Seaport-powered trading",
+  "scripts": {
+    "build": "hardhat compile && pnpm --filter @nftmintport/sdk build",
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "test:unit": "hardhat test test/unit/*.test.ts",
+    "test:e2e": "hardhat test test/e2e/*.test.ts",
+    "deploy": "ts-node scripts/deploy-from-config.ts",
+    "deploy:local": "hardhat run scripts/deploy-all.ts",
+    "deploy:config": "ts-node scripts/deploy-from-config.ts",
+    "deploy:seaport": "ts-node scripts/deploy-seaport.ts",
+    "inspect:deployments": "ts-node scripts/inspect-deployments.ts",
+    "check:network": "hardhat run scripts/check-network.ts",
+    "lint": "tsc --noEmit && pnpm --filter @nftmintport/sdk lint"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.0.2"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox-viem": "^3.0.0",
+    "@types/chai": "^4.3.16",
+    "@types/chai-as-promised": "^8.0.2",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "^20.12.7",
+    "hardhat": "^2.22.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5",
+    "viem": "^2.21.0"
+  }
+}
