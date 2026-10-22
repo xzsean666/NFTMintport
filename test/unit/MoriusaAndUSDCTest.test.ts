@@ -34,7 +34,7 @@ describe("MoriusaTestNFT and TestUSDC Unit Tests", () => {
 
       await aliceNft.write.mint([alice.account.address]);
       expect(await nft.read.balanceOf([alice.account.address])).to.equal(1n);
-      expect((await nft.read.ownerOf([1n])).toLowerCase()).to.equal(alice.account.address.toLowerCase());
+      expect(((await nft.read.ownerOf([1n])) as string).toLowerCase()).to.equal(alice.account.address.toLowerCase());
       expect(await nft.read.tokenURI([1n])).to.equal(
         "ipfs://bafybeic7vcmk2xxdv234bylg2n2q6o52kgh6tqu5i4w2p3yfxq6a2m4k6e/moriusa.json"
       );

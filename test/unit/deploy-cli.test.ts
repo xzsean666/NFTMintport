@@ -15,6 +15,7 @@ import {
 } from "../../scripts/utils/manifest";
 import { deploySeaportStandalone } from "../../scripts/deploy-seaport";
 import { inspectDeployments } from "../../scripts/inspect-deployments";
+import { verifyManifest } from "../../scripts/verify-manifest";
 
 describe("Deployment CLI & RPC Management Unit Tests", () => {
   describe("CLI Argument Parsing", () => {
@@ -127,6 +128,12 @@ describe("Deployment CLI & RPC Management Unit Tests", () => {
 
     it("should run inspection helper without error", async () => {
       await inspectDeployments();
+    });
+
+    it("should inspect and verify manifest contracts on live explorer", async () => {
+      const reports = await verifyManifest("soneium-minato-1946");
+      expect(reports.length).to.equal(3);
+      expect(reports.every((r) => r.isVerified)).to.be.true;
     });
   });
 });

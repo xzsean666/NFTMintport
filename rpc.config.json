@@ -16,7 +16,7 @@
     "rpcUrl": "https://rpc.minato.soneium.org",
     "isTestnet": true,
     "currency": "ETH",
-    "explorerUrl": "https://explorer-testnet.soneium.org"
+    "explorerUrl": "https://soneium-minato.blockscout.com"
   },
   "11155111": {
     "name": "Ethereum Sepolia",

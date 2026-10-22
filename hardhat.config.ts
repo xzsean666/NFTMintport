@@ -78,6 +78,24 @@ const config: HardhatUserConfig = {
     cache: "./cache",
     artifacts: "./artifacts",
   },
+  etherscan: {
+    apiKey: {
+      "soneium-minato": process.env.BLOCKSCOUT_API_KEY || "empty",
+    },
+    customChains: [
+      {
+        network: "soneium-minato",
+        chainId: 1946,
+        urls: {
+          apiURL: "https://soneium-minato.blockscout.com/api",
+          browserURL: "https://soneium-minato.blockscout.com",
+        },
+      },
+    ],
+  },
+  sourcify: {
+    enabled: false,
+  },
 };
 
 export default config;

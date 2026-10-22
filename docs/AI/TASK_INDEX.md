@@ -11,6 +11,8 @@
 | [**TASK-007**](file:///ssd0/git/NFTMintport/docs/AI/tasks/TASK-007.md) | Permissionless Test NFT Collection & Config-Driven Deployment Pipeline | DONE | TASK-002, TASK-003, TASK-004 | Implement permissionless TestMintNFT, declarative deploy.config.ts, config-driven deployment pipeline, and SDK support. |
 | [**TASK-008**](file:///ssd0/git/NFTMintport/docs/AI/tasks/TASK-008.md) | Dynamic JSON Deployment CLI, RPC Management & Deployment Inspector | DONE | TASK-003, TASK-007 | Implement `--config <file.json>` CLI, rpc.config.json registry, Seaport auto-deployment, inspection helper, and per-deployment history. |
 | [**TASK-009**](file:///ssd0/git/NFTMintport/docs/AI/tasks/TASK-009.md) | Codebase Audit, Security Invariant Hardening & Pipeline Resilience Fixes | DONE | TASK-001..TASK-008 | Comprehensive audit remediation: Seaport cancel/start authorization, CEI reentrancy safety, native ETH refund, ERC-1155 burnable, SDK exports/types, and incremental deployment preservation. |
+| [**TASK-010**](file:///ssd0/git/NFTMintport/docs/AI/tasks/TASK-010.md) | Contract Verification on Soneium Minato Blockscout | DONE | TASK-001..TASK-009 | Verify deployed contracts (MoriusaTestNFT, TestUSDC, MockSeaportV16) on Minato Blockscout, configure hardhat-verify customChains, add verification script, and confirm verified status on explorer. |
+| [**TASK-011**](file:///ssd0/git/NFTMintport/docs/AI/tasks/TASK-011.md) | Enhanced Selective Contract Verification Tooling | DONE | TASK-001..TASK-010 | Implement flexible verification CLI supporting single contract address, config/manifest filtering, selective `--only`/`--exclude`, and `"verify": false` exclusion flags. |
 
 ---
 

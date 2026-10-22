@@ -15,6 +15,9 @@
     "deploy:config": "ts-node scripts/deploy-from-config.ts",
     "deploy:seaport": "ts-node scripts/deploy-seaport.ts",
     "inspect:deployments": "ts-node scripts/inspect-deployments.ts",
+    "verify": "ts-node scripts/verify.ts",
+    "verify:minato": "ts-node scripts/verify.ts --manifest deployments/soneium-minato-1946.json",
+    "verify:manifest": "ts-node scripts/verify.ts",
     "check:network": "hardhat run scripts/check-network.ts",
     "lint": "tsc --noEmit && pnpm --filter @nftmintport/sdk lint"
   },
